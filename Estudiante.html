@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estudiantes ITC</title>
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="style/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="main.css" />
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <!-- Jquery -->
+    <script src="jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <!-- As a heading -->
+    <nav class="navbar bg-primary" style="height: 5rem">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1 text-light"
+          >Sistema Estratégico ITC Cuautla</span
+        >
+      </div>
+    </nav>
+
+    <!-- title -->
+    <div class="m-1 mt-4 text-center d-flex justify-content-center row">
+      <h5 class="carreraName"></h5>
+      <hr class="mt-2 mb-2 w-50" />
+    </div>
+
+    <!-- contenedor principal -->
+    <div class="main-view m-2 p-5">
+      <!-- contenedor secundario -->
+      <div class="row d-flex justify-content-between">
+        <!-- regsitro de materias -->
+        <div class="col-5 option-1 border rounded border-primary shadow">
+          <div class="text-center m-2">
+            <h6><strong>Regritro de materias</strong></h6>
+            <hr class="mt-2 mb-2" />
+            <div class="d-flex justify-content-center p-2">
+              <div
+                id="logo-reg"
+                class="btn border border-primary rounded w-50 mt-2 mb-2"
+                style="height: 12rem"
+              >
+                <small><img class="logo1" src="img/lista.gif" /></small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- registro de asesoria -->
+        <div class="col-5 option-2 border rounded border-primary shadow">
+          <div class="text-center m-2">
+            <h6><strong>Asesoria interna</strong></h6>
+            <hr class="mt-2 mb-2" />
+            <div class="d-flex justify-content-center p-2">
+              <div
+                id="logo-aser"
+                class="logo-ase border border-primary rounded w-50 mt-2 mb-2"
+                style="height: 12rem"
+              >
+                <small><img class="logo2" src="img/usuario.gif" /></small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Registro de materias -->
+    <div class="container-registro mt-2" style="display: none">
+      <h5 class="text-center text-primary"><b>Datos personales</b></h5>
+      <div class="container border rounded border-primary p-5">
+        <div class="row mt-2">
+          <!-- Nombre -->
+          <div class="names-user col-4">
+            <label for="name-user-1" class="form-label"><b>Nombre(s)</b></label>
+            <input
+              type="text"
+              style="text-transform:uppercase;"
+              onkeyup="javascript:this.value=this.value.toUpperCase();"
+              class="form-control validad-estudiante"
+              id="name-user-1"
+              placeholder="Ingresar nombre(s)"
+            />
+          </div>
+          <!-- Apellido 1 -->
+          <div class="last-name-1 col-4">
+            <label for="last-name-user" class="form-label"
+              ><b>Apellido paterno</b></label
+            >
+            <input
+              type="text"
+              style="text-transform:uppercase;"
+              onkeyup="javascript:this.value=this.value.toUpperCase();"
+              class="form-control validad-estudiante"
+              id="last-name-user"
+              placeholder="Ingresar apellido paterno"
+            />
+          </div>
+          <!-- Apellido 2 -->
+          <div class="last-name-2 col-4">
+            <label for="last-name-user-1" class="form-label"
+              ><b>Apellido materno</b></label
+            >
+            <input
+              type="text"
+              style="text-transform:uppercase;"
+              onkeyup="javascript:this.value=this.value.toUpperCase();"
+              class="form-control validad-estudiante"
+              id="last-name-user-1"
+              placeholder="Ingresar apellido materno"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- Datos carrera -->
+      <h5 class="text-center text-primary mt-4"><b>Datos carrera</b></h5>
+      <div class="container border rounded border-primary p-5">
+        <div class="row mt-2">
+          <!-- Numero de control-->
+          <div class="id-user col-4">
+            <label for="id-user" class="form-label"
+              ><b>Número de control</b></label
+            >
+            <input
+              type="text"
+              class="form-control validad-estudiante"
+              id="id-user"
+              placeholder="Número de control"
+              required minlength="4"
+              maxlength="8"
+            />
+          </div>
+          <!-- Periodo-->
+          <div class="periodo-user col-4">
+            <label for="select-p" class="form-label"><b>Periodo</b></label>
+            <select
+              id="select-p"
+              class="form-select validad-estudiante"
+              aria-label="Default select example"
+            >
+              <option selected>Periodo</option>
+              <option value="AGOSTO-DICIEMBRE">Agosto-Diciembre</option>
+              <option value="ENERO-JUNIO">Enero-Junio</option>
+            </select>
+          </div>
+          <!--Años-->
+          <div class="year-user col-4">
+            <label for="select-year" class="form-label"><b>Año</b></label>
+            <select
+              id="select-year"
+              class="form-select validad-estudiante"
+              aria-label="Default select example"
+            >
+              <option selected>Año</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <!-- Buttons -->
+      <div class="container mt-4">
+        <div class="row d-flex justify-content-center">
+          <!-- Back -->
+          <div class="col-2">
+            <button type="button" class="btn btn-secondary back-user">
+              Volver
+            </button>
+          </div>
+          <!-- Next -->
+          <div class="col-2">
+            <button type="button" id="getData" class="btn btn-primary">
+              Confirmar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Asesoria -->
+    <div class="container-asesoria mt-2" style="display: none">
+      <h5 class="text-center text-primary"><b>Datos personales</b></h5>
+      <div class="container border rounded border-primary p-5">
+        <div class="row mt-2">
+          <!-- Nombre -->
+          <div class="names-aser col-3">
+            <label for="name-aser-1" class="form-label"><b>Nombre(s)</b></label>
+            <input
+              type="text"
+              style="text-transform:uppercase;"
+              onkeyup="javascript:this.value=this.value.toUpperCase();"
+              class="form-control validad-estudiante"
+              id="names-aser"
+              placeholder="Ingresar nombre(s)"
+            />
+          </div>
+          <!-- Apellido 1 -->
+          <div class="last-name-1 col-3">
+            <label for="last-aser-user" class="form-label"
+              ><b>Apellido paterno</b></label
+            >
+            <input
+              type="text"
+              style="text-transform:uppercase;"
+              onkeyup="javascript:this.value=this.value.toUpperCase();"
+              class="form-control validad-estudiante"
+              id="last-aser-user"
+              placeholder="Ingresar apellido paterno"
+            />
+          </div>
+          <!-- Apellido 2 -->
+          <div class="last-name-2 col-3">
+            <label for="last-aser-user-1" class="form-label"
+              ><b>Apellido materno</b></label
+            >
+            <input
+              type="text"
+              style="text-transform:uppercase;"
+              onkeyup="javascript:this.value=this.value.toUpperCase();"
+              class="form-control validad-estudiante"
+              id="last-aser-user-1"
+              placeholder="Ingresar apellido materno"
+            />
+          </div>
+          <!-- Numero de control-->
+          <div class="id-user col-3">
+            <label for="id-user-aser" class="form-label"
+              ><b>Número de control</b></label
+            >
+            <input
+              type="text"
+              class="form-control validad-estudiante"
+              id="id-user-aser"
+              placeholder="Número de control"
+              required minlength="4"
+              maxlength="8"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- Comentario -->
+      <h5 class="text-center text-primary mt-4"><b>Mensaje o peteción</b></h5>
+      <div class="container">
+        <div class="form-outline">
+          <textarea
+          style="text-transform:uppercase;"
+            onkeyup="javascript:this.value=this.value.toUpperCase();"
+            class="form-control border rounded border-primary p-5"
+            id="textAreaAser"
+            rows="4"
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="container mt-4">
+        <div class="row d-flex justify-content-center">
+          <!-- Back -->
+          <div class="col-2">
+            <button type="button" class="btn btn-secondary back-aser">
+              Volver
+            </button>
+          </div>
+          <!-- Next -->
+          <div class="col-2">
+            <button type="button" id="getAsesoria" class="btn btn-primary">
+              Confirmar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loadmaterias -->
+    <div class="materias-loads mt-4 mb-5" style="display: none">
+      <div class="container">
+        <div class="row">
+          <!-- nombre -->
+          <div class="col-12 text-center">
+            <h6 class="name-user-comf text-primary"></h6>
+            <h6 class="name-user-comf-id text-primary d-none"></h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div
+          class="row materias-get-load gx-5 d-flex justify-content-center aling-content-center"
+        ></div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="container mt-4">
+        <div class="row d-flex justify-content-center">
+          <!-- Back -->
+          <div class="col-2">
+            <button type="button" class="btn btn-secondary back-user-1">
+              Volver
+            </button>
+          </div>
+          <!-- Next -->
+          <div class="col-2">
+            <button type="button" id="comfirmRegistro" class="btn btn-primary">
+              Confirmar materias
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Load -->
+    <div id="load-modal" class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-primary">
+            <h6 class="modal-title text-light">Sistema Estratégico</h6>
+          </div>
+          <div class="modal-body text-center text-primary">
+            <p><b>Validando datos</b></p>
+            <div class="d-flex justify-content-center">
+              <div class="loader-modal"></div>
+            </div>
+          </div>
+          <div class="modal-footer bg-primary"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal mensaje registro -->
+    <div
+      class="modal fade"
+      id="modalRegistrer"
+      tabindex="-1"
+      aria-labelledby="modalRegistrerLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fs-5">Registro de materias</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3 text-center">
+                <small class="text-primary1"
+                  ><strong
+                    >¡Se han guardado materias, confirma registro! <br />
+                    Puedes agregar un comentario.</strong
+                  ></small
+                >
+              </div>
+              <div class="mb-3">
+                <label for="message-text" class="col-form-label"
+                  ><strong>Comentario de registro</strong></label
+                >
+                <textarea class="form-control" id="message-text-set"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary closed-modal-reg"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button type="button" class="btn btn-primary" id="setDataMaterias">
+              Confirmar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+  
+  <!-- Script de boostrap -->
+  <script src="style/js/bootstrap.bundle.min.js"></script>
+  <script src="config.js"></script>
+  <script src="navigantion.js"></script>
+  <script src="tata.js"></script>
+  <script src="MainEstudiante.js"></script>
+</html>

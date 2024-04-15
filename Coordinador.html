@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coordinador SII</title>
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="style/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  <!-- Jquery -->
+  <script src="jquery-3.6.0.min.js"></script>
+  <!-- css -->
+  <link rel="stylesheet" href="style/css/spinner.css" />
+  <body>
+    <!-- As a heading -->
+    <nav class="navbar navbar-light bg-primary">
+      <div class="container-fluid">
+        <span
+          class="navbar-brand mb-0 h1 mt-2"
+          style="height: 3rem"
+          id="title-teacher"
+          >Navbar</span
+        >
+        <small style="font-size: 10px" class="text-black" id="dateNow"
+          >....</small
+        >
+      </div>
+    </nav>
+
+    <div class="container mt-5 p-1">
+      <main class="container">
+        <div class="row d-flex justify-content-between">
+
+          <div id="getUsers" class="col-5 border border-info rounded btn shadow-lg">
+            <div class="text-center mt-2">
+              <h6 class="text-primary"><strong>Usuarios</strong></h6>
+            </div>
+            <hr />
+
+            <div class="d-flex justify-content-center mb-5">
+              <img
+                src="img/users.jpg"
+                alt=""
+                srcset=""
+                style="width: 8rem; height: 8rem"
+                class="border rounded"
+              />
+            </div>
+          </div>
+
+          <div id="getMaterias" class="col-5 border border-info rounded btn shadow-lg">
+            <div class="text-center mt-2">
+              <h6 class="text-primary"><strong>Materias</strong></h6>
+            </div>
+            <hr />
+
+            <div class="d-flex justify-content-center mb-5">
+              <img
+                src="img/materias.jpg"
+                alt=""
+                srcset=""
+                style="width: 8rem; height: 8rem"
+                class="border rounded"
+              />
+            </div>
+          </div>
+
+          <div id="getAsesor" class="col-5 border border-info rounded mt-4 btn shadow-lg">
+            <div class="text-center mt-2">
+              <h6 class="text-primary"><strong>Asesorias</strong></h6>
+            </div>
+            <hr />
+            <div class=""></div>
+            <div class="d-flex justify-content-center mb-5">
+              <img
+                src="img/asesoria.jpg"
+                alt=""
+                srcset=""
+                style="width: 8rem; height: 8rem"
+                class="border rounded"
+              />
+            </div>
+          </div>
+
+          <div id="getExtras" class="col-5 border border-info rounded mt-4 btn shadow-lg">
+            <div class="text-center mt-2">
+              <h6 class="text-primary"><strong>Extras</strong></h6>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-center mb-5">
+              <img
+                src="img/extras.jpg"
+                alt=""
+                srcset=""
+                style="width: 8rem; height: 8rem"
+                class="border rounded"
+              />
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal Large -->
+    <div
+      id="modalGetData"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <!-- Header -->
+          <div class="modal-header bg-primary" style="height: 3rem">
+            <small
+              class="modal-title text-white"
+              style="font-size: 16px"
+              id="titleSistema"
+              >Obteniendo datos...</small
+            >
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!-- Body -->
+          <div class="modal-body">
+            <section id="sectionModalLoad" class="modal-main section-load">
+              <div class="row">
+                <h6 class="text-dark text-center">
+                  Realizando consulta a base de datos...
+                </h6>
+                <div class="justify-center mt-2 mb-0">
+                  <div class="spinner mt-2 mb-2">
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
+                  </div>
+                </div>
+                <h6 class="text-dark text-center">
+                  Sistemas Estratégico ITC Cuautla
+                </h6>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="config.js"></script>
+  <!-- Script de boostrap -->
+  <script src="style/js/bootstrap.bundle.min.js"></script>
+  <!-- moment js -->
+  <script src="moment.js"></script>
+  <script src="moment.min.js"></script>
+  <!-- js -->
+  <script src="mainCoord.js"></script>
+  <!-- tata -->
+  <script src="tata.js"></script>
+</html>

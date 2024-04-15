@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ITC Cuautla Sistema estrategico</title>
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="style/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="style/css/spinner.css">
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <!-- Jquery -->
+    <script src="jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <!--Formulario login-->
+    <div class="row-formulario">
+      <!--Imagen de fondo-->
+      <div class="" id="contenedor-1"></div>
+
+      <!--Formulario -->
+      <div class="fondo rounded"></div>
+
+      <div class="formulario-login">
+        <h1 class="text-center font-weight-bold">Inicia sesión</h1>
+        <div class="mt-3">
+          <!-- Email -->
+          <div class="form-group form-input-1 w-50 m-auto">
+            <label
+              class="font-weight-bold text-center w-100"
+              for="input-usuario"
+              ><strong>Usuario</strong></label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="email-user"
+              aria-describedby="emailHelp"
+              placeholder="Ingresa tu correo"
+            />
+          </div>
+          <!--  contraseña-->
+          <div class="form-group mt-4 w-50 m-auto">
+            <label class="font-weight-bold text-center w-100" for="button-pass"
+              ><strong>Ingresa contraseña</strong></label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="pass-user"
+              placeholder="Contraseña"
+            />
+          </div>
+          <!-- Enviar button -->
+          <div class="button-div mt-4 w-50 m-auto">
+            <button onclick="loginUser()" class="btn btn-outline-dark w-100">
+              <strong>Ingresar</strong>
+            </button>
+          </div>
+        </div>
+
+        <div class="mt-2 text-center d-flex row justify-content-center d-none"id="loader-user">
+          <label for=""><strong>Validando acceso</strong></label>
+          <div class="justify-center mt-2">
+          <div class="spinner mt-2">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+          </div>
+        </div>
+      </div>
+        
+      </div>
+      <!-- Loaders -->
+    </div>
+
+    <!-- Loders -->
+  </body>
+
+  <!-- Script de boostrap -->
+  <script src="style/js/bootstrap.bundle.min.js"></script>
+  <!-- Script JS -->
+  <script src="config.js"></script>
+  <script src="login.js"></script>
+  <script src="tata.js"></script>
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "itc_cuautla",
+  "author": "Selene B.H.",
+  "version": "1.0.0",
+  "description": "Sistema Integral de ITC Cuautla",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js",
+    "pack": "build --dir",
+    "dist": "build"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "20": "^3.1.9",
+    "electron": "^28.2.1",
+    "electron-builder": "^19.13.0",
+    "standard": "^17.1.0"
+  },
+  "build": {
+    "appId": "ITC Cuautla",
+    "asar": true,
+    "win": {
+      "target": "NSIS",
+      "icon": "build/icon.ico"
+    }
+  },
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}
